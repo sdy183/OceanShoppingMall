@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sdy.ocean.user.mapper.UserMapper">
+
+    <select id="selectAllUser" resultType="umsMember">
+        SELECT * FROM ums_member
+    </select>
+
+    <select id="selectUmsMemerCountById" resultType="String">
+        SELECT COUNT(1) FROM ums_member
+        <if test="id != 0">
+            where id = #{id}
+        </if>
+    </select>
+
+</mapper>
